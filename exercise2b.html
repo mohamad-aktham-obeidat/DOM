@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Exercise #2: Changing colors</title>
+    <title>Exercise #2b (3): Randomizing initial color</title>
     <style>
         #mydiv {
             width: 200px;
@@ -14,9 +14,18 @@
         /* TODO: write JS code here */
         window.onload = function() {
             var myDiv = document.getElementById('mydiv');
-            
-            myDiv.style = 'background-color: blue';
 
+            // Initial value: 
+            var num = Math.random() * 3;
+            num = Math.ceil(num);
+            if(num === 1)
+                myDiv.style = 'background-color: blue';
+            if(num === 2)
+                myDiv.style = 'background-color: red';
+            if(num === 3)
+                myDiv.style = 'background-color: green';
+            
+            // onclick color:
             myDiv.onclick = function() {
                 if(myDiv.style.backgroundColor === 'blue')
                     myDiv.style = 'background-color: red';
@@ -24,7 +33,7 @@
                     myDiv.style = 'background-color: green';
                 else if(myDiv.style.backgroundColor === 'green')
                     myDiv.style = 'background-color: blue';
-            };
+            };          
         };
     </script>
 </head>
